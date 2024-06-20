@@ -1,0 +1,12 @@
+kw1 : https://pl.m.wikipedia.org/wiki/Plik:Centaurium_erythraea_050708.jpg
+kw2 : https://pl.wikipedia.org/wiki/Likopodium
+kw3 : https://pl.wiktionary.org/wiki/ka%C4%8Denka
+kw4 : https://commons.wikimedia.org/wiki/Category:Gyromitra
+kw5 : https://en.wikipedia.org/wiki/Dianthus_superbus
+kw6 : https://przyrodniczo.pl/rosliny/kukulka-plamista/
+kw7 : https://pl.wikipedia.org/wiki/Mieczyk_dach%C3%B3wkowaty
+kw8 : https://www.castorama.pl/barwinek-pospolity-verve-10-5-cm/5059340413556_CAPL.prd
+kw9 : https://atlas.roslin.pl/plant/7472
+kw10 : https://pl.wikipedia.org/wiki/Kuku%C5%82ka_krwista
+kw11 : https://pl.wikipedia.org/wiki/Kuku%C5%82ka_szerokolistna
+kw12 : https://vep.wikipedia.org/wiki/Bolobolk_(nitkazmuz)

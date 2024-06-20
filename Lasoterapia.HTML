@@ -1,0 +1,327 @@
+  <!-- Autor: Uladzislau Prusevich -->
+  <!-- Data utworzenia: 14-15 czerwca 2023 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: calc(100% - 60px); 
+      position: fixed;
+      top: 60px;
+      width: 100%;
+    }
+    #header {
+      background-color: green;
+      color: white;
+      padding: 20px;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 50px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+    }
+	.leaflet-top {
+      top: 60px !important; 
+    }
+	.leaflet-popup-content-wrapper {
+      background-color: lightgreen;
+    }
+	.image-caption {
+  text-align: center;
+  margin-top: 2px;
+  font-size: 14px;
+  color: black;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+.centered-text {
+    text-align: center;
+    font-size: small;
+    word-wrap: break-word;
+    margin-top: 10px;
+}
+.centered-text a {
+    color: black;
+    display: block;
+    margin-bottom: 3px; 
+}
+  </style>
+</head>
+<body>
+	<div id="header" style="display: flex; align-items: center;">
+		<div style="display: flex; align-items: center;">
+		  <span style="font-size: 60px; margin-right: 10px;">Ścieżka do lasoterapii - Las Bemowski</span>
+		</div>
+		<img src="Dane/wydzial.png" alt="Obrazek" style="width: 300px; height: 80px; margin-right: 10px; margin-left: auto;">
+	  </div>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([52.249951, 20.863772], 15);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+      maxZoom: 18
+    }).addTo(map);
+	
+
+  var point1 = L.latLng(52.249951, 20.863772);
+  var point2 = L.latLng(52.261141, 20.874852);
+	var point3 = L.latLng(52.261220, 20.874905);
+	var point4 = L.latLng(52.261351, 20.874833);
+	var point5 = L.latLng(52.261555, 20.874621);
+	var point6 = L.latLng(52.261559, 20.874629);
+	var point7 = L.latLng(52.261677, 20.874998);
+	var point8 = L.latLng(52.261931, 20.875515);
+	var point9 = L.latLng(52.262298, 20.875972);
+	var point10 = L.latLng(52.264054, 20.877686);
+	var point11 = L.latLng(52.264086, 20.877775);
+	var point12 = L.latLng(52.264124, 20.877912);
+	var point13 = L.latLng(52.265404, 20.879000);
+	var point14 = L.latLng(52.266288, 20.875968);
+	var point15 = L.latLng(52.266469, 20.875360);
+	var point16 = L.latLng(52.266511, 20.874963);
+	var point17 = L.latLng(52.266529, 20.874709);
+	var point18 = L.latLng(52.266594, 20.874161);
+	var point19 = L.latLng(52.266716, 20.873188);
+	var point20 = L.latLng(52.266820, 20.872450);
+	var point21 = L.latLng(52.266918, 20.872085);
+	var point22 = L.latLng(52.267249, 20.869712);
+	var point23 = L.latLng(52.267261, 20.869565);
+	var point24 = L.latLng(52.267178, 20.869271);
+	var point25 = L.latLng(52.266952, 20.868424);
+	var point26 = L.latLng(52.266806, 20.867857);
+	var point27 = L.latLng(52.266368, 20.866354);
+	var point28 = L.latLng(52.266289, 20.865879);
+	var point29 = L.latLng(52.266275, 20.865616);
+	var point30 = L.latLng(52.266182, 20.865279);
+	var point31 = L.latLng(52.266182, 20.865279);
+	var point32 = L.latLng(52.266275, 20.865616);
+	var point33 = L.latLng(52.266289, 20.865879);
+	var point34 = L.latLng(52.266368, 20.866354);
+	var point35 = L.latLng(52.266806, 20.867857);
+	var point36 = L.latLng(52.266952, 20.868424);
+	var point37 = L.latLng(52.267178, 20.869271);
+	var point38 = L.latLng(52.267261, 20.869565);
+	var point39 = L.latLng(52.267706, 20.866781);
+	var point40 = L.latLng(52.268980, 20.867651);
+	var point41 = L.latLng(52.269267, 20.867507);
+	var point42 = L.latLng(52.269528, 20.867500);
+	var point43 = L.latLng(52.269713, 20.867861);
+	var point44 = L.latLng(52.269887, 20.868259);
+	var point45 = L.latLng(52.271088, 20.868984);
+	var point46 = L.latLng(52.272263, 20.870985);
+	var point47 = L.latLng(52.272414, 20.871082);
+	var point48 = L.latLng(52.272910, 20.871269);
+	var point49 = L.latLng(52.272279, 20.871795);
+	var point50 = L.latLng(52.271693, 20.872500);
+	var point51 = L.latLng(52.270631, 20.873634);
+	var point52 = L.latLng(52.270510, 20.873551);
+	var point53 = L.latLng(52.270377, 20.873524);
+	var point54 = L.latLng(52.270207, 20.873579);
+	var point55 = L.latLng(52.270064, 20.873718);
+	var point56 = L.latLng(52.270005, 20.873761);
+	var point57 = L.latLng(52.269887, 20.873958);
+	var point58 = L.latLng(52.269980, 20.874075);
+	var point59 = L.latLng(52.269501, 20.874968);
+	var point60 = L.latLng(52.267100, 20.878963);
+	var point61 = L.latLng(52.265626, 20.881475);
+	var point62 = L.latLng(52.265425, 20.882084);
+	var point63 = L.latLng(52.265305, 20.883490);
+	var point64 = L.latLng(52.265129, 20.884224);
+	var point65 = L.latLng(52.264393, 20.885098);
+	var point66 = L.latLng(52.264072, 20.885481);
+	var point67 = L.latLng(52.263862, 20.885871);
+	var point68 = L.latLng(52.262758, 20.889534);
+	var point69 = L.latLng(52.263700, 20.891057);
+
+
+    var line = L.polyline([point1, point2, point3, point4, point5,
+							point6, point7, point8, point9, point10,
+							point11, point12, point13, point14, point15,
+							point16,point17, point18, point19, point20,
+							point21, point22, point23, point24, point25,
+							point26, point27, point28, point29, point30,
+							point31, point32, point33, point34, point35,
+							point36, point37, point38, point39, point40,
+							point41, point42, point43, point44, point45,
+							point46, point47, point48, point49, point50, 
+							point51, point52, point53, point54, point55,
+							point56, point57, point58, point59, point60,
+							point61, point62, point63, point64, point65,
+							point66, point67, point68, point69
+							],{
+      color: 'red',
+      weight: 5 
+    }).addTo(map);
+	
+	var marker = L.marker([52.253468, 20.867550]).addTo(map);
+marker.bindPopup(`
+  <div style="max-height: 400px; overflow-y: auto;">
+  <h3>Stacja 1. Plac zabaw/wejście do lasu.</h3>
+  <p>Dowiecie się podstawowych informacji o lesie z tablic informacyjnych. Jest to też ostatni moment na zjedzenie kanapek przed wyruszeniem w około 8km podróż.</p>
+  <hr />
+  <p><strong>Siedlisko:</strong> Bór mieszany świeży. Bory mieszane cechują się połączeniem cech zdrowotnych dla układów borowych i grądowych. Wysokie stężenie substancji bakteriobójczych i bakteriostatycznych w połączeniu z niższym zagrożeniem ze strony alergenów pyłkowych, tworzy z boru miejsce wypoczynku dla osób w różnym wieku. Bory świeże są też chłonne naturalnie. Wzmożona obecność ludzi nie zaszkodzi temu siedlisku tak bardzo jak innym, o niższej chłonności. Doradza się  niewchodzenia w głąb z powodu łatwości uszkodzenia fauny i flory glebowej.</p>
+  <p><strong>Skład gatunkowy:</strong> Sosna zwyczajna, Brzoza brodawkowata, Klon pospolity, Dąb czerwony, Klon jesionolistny</p>
+  <p><strong>Gatunki chronione:</strong> Centuria pospolita, Widłak goździsty, Piestrzenica kasztanowata</p>
+  <div class="image-container">
+    <img src="Dane/kw1.jpg" style="max-width: 200px; max-height: 200px;">
+	  <img src="Dane/kw2.jpg" style="max-width: 200px; max-height: 200px;">
+    <img src="Dane/kw4.jpg" style="display: block; margin: 0 auto; max-width: 200px; max-height: 200px;">
+    <div class="image-caption">1.Centuria pospolita, 2.Widłak goździsty i 3.Piestrzenica kasztanowata</div>
+  </div>
+  <button onclick="window.location.href='Dane/zdj1.html'">Zdjęcie 1</button>
+  <button onclick="window.location.href='Dane/stac1foto2.html'">Zdjęcie 2</button>
+  <button onclick="window.location.href='Dane/1film.html'">Wideo</button>
+  <div class="centered-text">
+  <a style="color: black; font-weight: bold;">Źródła zdjęć:</a>
+  <a style="color: black;">1.https://pl.m.wikipedia.org/wiki/Plik:Centaurium_erythraea_050708.jpg </a>
+  <a style="color: black;">2.https://pl.wikipedia.org/wiki/Likopodium </a>
+  <a style="color: black;">3.https://commons.wikimedia.org/wiki/Category:Gyromitra</a>
+</div>
+</div>
+`);
+
+var marker = L.marker([52.264483, 20.877974]).addTo(map);
+marker.bindPopup(`
+<div style="max-height: 400px; overflow-y: auto;">
+  <h3>Stacja 2. Ruiny radiostacji.</h3>
+  <p>Zapoznacie się z fascynującą historią radarów, z czasów międzywojennych, oglądając ruiny ich podstaw i czytając informacje przygotowane przez leśników i historyków.</p>
+  <hr />
+  <p><strong>Siedlisko:</strong> Las mieszany świeży. To siedlisko przejawia bardzo podobne właściwości co bór mieszany świeży z poprzedniej stacji. Działa pozytywnie na wzmocnienie odporności organizmu i odkażająco.</p>
+  <p><strong>Skład gatunkowy:</strong> Sosna zwyczajna, Brzoza brodawkowata, Dąb szypułkowy, Topola osika, Robinia akacjowa, Klon pospolity</p>
+  <p><strong>Gatunki chronione:</strong> Centuria pospolita, Widłak goździsty, Naparstnica czeska</p>
+  <div class="image-container">
+    <img src="Dane/kw1.jpg"  style="max-width: 200px; max-height: 200px;">
+	  <img src="Dane/kw2.jpg"  style="max-width: 200px; max-height: 200px;">
+    <img src="Dane/kw3.jpg"  style="display: block; margin: 0 auto; max-width: 200px; max-height: 200px;">
+    <div class="image-caption">1.Centuria pospolita, 2.Widłak goździsty i 3.Naparstnica czeska</div>
+  </div>
+  <button onclick="window.location.href='Dane/zdj2.html'">Zdjęcie 1</button>
+  <button onclick="window.location.href='Dane/2foto2.html'">Zdjęcie 2</button>
+  <button onclick="window.location.href='Dane/2film.html'">Wideo</button>
+  <div class="centered-text">
+  <a style="color: black; font-weight: bold;">Źródła zdjęć:</a>
+  <a style="color: black;">1.https://pl.m.wikipedia.org/wiki/Plik:Centaurium_erythraea_050708.jpg </a>
+  <a style="color: black;">2.https://pl.wikipedia.org/wiki/Likopodium </a>
+  <a style="color: black;">3.https://pl.wiktionary.org/wiki/ka%C4%8Denka</a>
+</div>
+</div>
+`);
+
+var marker = L.marker([52.266022, 20.865573]).addTo(map);
+marker.bindPopup(`
+  <div style="max-height: 400px; overflow-y: auto;">
+  <h3>Stacja 3. Pomost Łosiowe Błota.</h3>
+  <p><strong>Wsłuchacie się w dźwięki lasu, ponieważ na tej kładce możecie znaleźć się głębiej i bliżej serca rezerwatu. Zamkniecie oczy i spróbujecie się poczuć jakbyście stali się częścią lasu. Spowolnijcie oddech i zrelaksujecie się. Bierzcie głębokie wdechy i tak przez półtorej minuty. Po skończonej medytacje możecie spróbować dostrzec i sfotografować ptaki chowające się w koronie drzew, które usłuszeliście.</strong></p>
+  <hr />
+  <p><strong>Siedlisko:</strong> Las wilgotny. Zwiększona wilgotność tego siedliska może powodować kłopoty u osób z problemami układy krążenia, dlatego odradza się dłuższego przebywania w nim osób starszych. Właściwość rekreacyjna, ze względu na miękkość podłoża, jest gorsza niż w lasach suchych czy świeżych. Las jest bardziej poddany na wydeptanie i zniszczenie związanie z odwiedzaniem przez ludzi. Zwłaszcza kiedy las dominuje olsza, tak jak w tym przypadku.</p>
+  <p><strong>Skład gatunkowy:</strong> Olsza czarna, Brzoza brodawkowata, Dąb szypułkowy, Jesion wyniosły, Leszczyna pospolita</p>
+  <p><strong>Gatunki chronione:</strong> Goździk pyszny, Kukułka plamista, Mieczyk dachówkowaty, Naparstnica czeska</p>
+  <div class="image-container">
+	  <img src="Dane/kw6.jpg"  style="max-width: 200px; max-height: 200px;">
+    <img src="Dane/kw7.jpg"  style="max-width: 200px; max-height: 200px;">
+    <img src="Dane/kw5.jpg"  style="max-width: 200px; max-height: 200px;">
+    <img src="Dane/kw3.jpg"  style="max-width: 200px; max-height: 200px;">
+    <div class="image-caption">1.Goździk pyszny, 2.Kukułka plamista,3.Mieczyk dachówkowaty oraz Naparstnica czeska</div>
+  </div>
+  <button onclick="window.location.href='Dane/zdj3.html'">Zdjęcie 1</button>
+  <button onclick="window.location.href='Dane/3foto2.html'">Zdjęcie 2</button>
+  <button onclick="window.location.href='Dane/3film.html'">Wideo</button>
+  <div class="centered-text">
+  <a style="color: black; font-weight: bold;">Źródła zdjęć:</a>
+  <a style="color: black;">1.https://przyrodniczo.pl/rosliny/kukulka-plamista/ </a>
+  <a style="color: black;">2.https://pl.wikipedia.org/wiki/Mieczyk_dach%C3%B3wkowaty</a>
+  <a style="color: black;">3.https://en.wikipedia.org/wiki/Dianthus_superbus</a>
+  <a style="color: black;">4.https://pl.wiktionary.org/wiki/ka%C4%8Denka</a>
+</div>
+  </div>
+`);
+
+var marker = L.marker([52.271895, 20.870282]).addTo(map);
+marker.bindPopup(`
+  <div style="max-height: 400px; overflow-y: auto;">
+  <h3>Stacja 4. Rezerwat Kalinowa łąka.</h3>
+  <p><strong>Przyjrzycie się gęstwienie jaka pokrywa łąkę. Spróbujecie zapisać jak najwięcej typów zwierząt i roślin jakie mogą się w niej chować a potem porównacie swoje pomysły z kolegami i koleżankami</strong></p>
+  <hr />
+  <p><strong>Siedlisko:</strong> Las wilgotny. Zwiększona wilgotność tego siedliska może powodować kłopoty u osób z problemami układy krążenia, dlatego odradza się dłuższego przebywania w nim osób starszych. Właściwość rekreacyjna, ze względu na miękkość podłoża, jest gorsza niż w lasach suchych czy świeżych. Las jest bardziej poddany na eksploatacje związane z obecnością ludzi. Zwłaszcza kiedy las dominuje olsza, tak jak w tym przypadku.</p>
+  <p><strong>Skład gatunkowy:</strong> Olsza czarna, Brzoza brodawkowata, Dąb szypułkowy, Jesion wyniosły, Leszczyna pospolita</p>
+  <p><strong>Gatunki chronione:</strong> Goździk pyszny, Kukułka krwista, Kukułka plamista, Kukułka szerokolistna, Pełnik europejski, Goryczka trojeściowa</p>
+  <div class="image-container">
+	  <img src="Dane/kw6.jpg"  style="max-width: 200px; max-height: 200px;">
+    <img src="Dane/kw10.jpg"  style="max-width: 200px; max-height: 200px;">
+    <img src="Dane/kw7.jpg"  style="max-width: 200px; max-height: 200px;">
+    <img src="Dane/kw11.jpg"  style="max-width: 200px; max-height: 200px;">
+    <img src="Dane/kw12.jpg"  style="display: block; margin: 0 auto; max-width: 200px; max-height: 200px;">
+    <div class="image-caption">1.Goździk pyszny, 2.Kukułka krwista,3.Kukułka plamista, 4.Kukułka szerokolistna, 5.Pełnik europejski oraz 6.Goryczka trojeściowa</div>
+  </div>
+  <button onclick="window.location.href='Dane/4foto1.html'">Zdjęcie 1</button>
+  <button onclick="window.location.href='Dane/4foto2.html'">Zdjęcie 2</button>
+  <button onclick="window.location.href='Dane/zdj4.html'">Wideo</button>
+  <div class="centered-text">
+  <a style="color: black; font-weight: bold;">Źródła zdjęć:</a>
+  <a style="color: black;">1.https://przyrodniczo.pl/rosliny/kukulka-plamista/</a>
+  <a style="color: black;">2.https://pl.wikipedia.org/wiki/Kuku%C5%82ka_krwista</a>
+  <a style="color: black;">3.https://pl.wikipedia.org/wiki/Mieczyk_dach%C3%B3wkowaty</a>
+  <a style="color: black;">4.https://pl.wikipedia.org/wiki/Kuku%C5%82ka_szerokolistna</a>
+  <a style="color: black;">5.https://vep.wikipedia.org/wiki/Bolobolk_(nitkazmuz)</a>
+</div>
+  </div>
+`);
+
+var marker = L.marker([52.263796, 20.890916]).addTo(map);
+marker.bindPopup(`
+  <div style="max-height: 400px; overflow-y: auto;">
+  <h3>Stacja 5. Ścieżka zdrowa.</h3>
+  <p><strong>Na sam koniec zobaczycie że las może też służyć do rekreacji i zabawy, dlatego na zakończenie naszej wycieczki możecie pobawić się na ścieżce zdrowia. Po skończeniu zabaw w berka chowanego czy małej rundce podciągnięć wyruszycie na pętlę Stare Bemowo skąd wrócicie do domu.</strong></p>
+  <hr />
+  <p><strong>Siedlisko:</strong> Las mieszany świeży. Siedlisko podobne do bory mieszanego świeżego, ale z większym udziałem drzew liściastych. Charakteryzuje się bardzo zbliżonymi właściwościami zdrowotnymi, jednak chłonność naturalna, determinująca właściwość rekreacyjną jest niższa.</p>
+  <p><strong>Skład gatunkowy:</strong> Sosna zwyczajna, Dąb szypułkowy, Brzoza brodawkowata, Robinia akacjowa, Grab pospolity, Topola biała</p>
+  <p><strong>Gatunki chronione:</strong> Barwinek pospolity, Wilżyna bezbronna</p>
+  <div class="image-container">
+	  <img src="Dane/kw8.jpg"  style="max-width: 200px; max-height: 200px;">
+    <img src="Dane/kw9.jpg"  style="max-width: 150px; max-height: 200px;">
+    <div class="image-caption">1.Barwinek pospolity, 2.Wilżyna bezbronna</div>
+  </div>
+  <button onclick="window.location.href='Dane/zdj5.html'">Zdjęcie 1</button>
+  <button onclick="window.location.href='Dane/5foto2.html'">Zdjęcie 2</button>
+  <button onclick="window.location.href='Dane/5film.html'">Wiedeo</button>
+  <div class="centered-text">
+  <a style="color: black; font-weight: bold;">Źródła zdjęć:</a>
+  <a style="color: black;">1.https://www.castorama.pl/barwinek-pospolity-verve-10-5-cm/5059340413556_CAPL.prd</a>
+  <a style="color: black;">2.https://atlas.roslin.pl/plant/7472</a>
+  </div>
+  </div>
+`);
+
+var redIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [0, -41]
+});
+
+var marker1 = L.marker([52.249951, 20.863772], { icon: redIcon }).addTo(map);
+marker1.bindPopup(`
+<h3>Punkt początkowy</h3>
+<p><strong>Lasy jako naturalne środowisko życia dla naszego gatunku, stanowi wciąż ważny element dla ludzkiego ciała i duszy. Jesteśmy genetycznie przystosowani do przebywania w lasach, poprawia nam się samopoczucie, a także stan zdrowia kiedy spacerujemy po lesie. Lasoterapia jest przeznaczona przede wszystkim dla mieszkańców miast gdzie kontaktu z naturą jest mniej. W zależności od typu lasu i jego zawartości, szczegóły lasoterapii mogą być różne, ale ich cel nadrzędny jest niezmienny. Pomóc ludziom zrelaksować się, poczuć lepiej zarówno duchowo jak i zdrowotnie.</strong></p>
+<button onclick="openPDF()">Infografika</button>
+`);
+function openPDF() {
+      window.open('Dane/LasBemowski_Infografika.pdf', '_blank');
+    }
+  </script>
+  </script>
+</body>
+</html>
